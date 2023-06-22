@@ -14,7 +14,7 @@ pipeline {
       stage('Static Analysis') {
         steps {
           withSonarQubeEnv('sonarqube') {
-            bat "mvn sonar:sonar -Dmaven.plugin.validation=VERBOSE"
+            bat "mvn sonar:sonar -Dmaven.plugin.validation=FALSE"
           }
         }
       }
