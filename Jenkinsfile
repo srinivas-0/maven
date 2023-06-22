@@ -3,13 +3,13 @@ pipeline {
     stages { 
         stage('checkout SCM') {
             steps {
-              withSonarQubeEnv('sonarqube')
-              bat "mvn clean package sonar:sonar"
+              bat "git pull https://github.com/srinivas-0/maven.git"
             }
         }
         stage('Static Analysis') {
             steps {
-              bat "git pull https://github.com/srinivas-0/maven.git"
+              withSonarQubeEnv('sonarqube')
+              bat "mvn clean package sonar:sonar"
             }
         }
         stage('Compile') {
