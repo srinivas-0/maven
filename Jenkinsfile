@@ -9,7 +9,7 @@ pipeline {
         stage('Static Analysis') {
             steps {
               withSonarQubeEnv('sonarqube')
-              bat "mvn clean sonar:sonar"
+              bat "mvn clean verify sonar:sonar -Dsonar.login=jenkins"
             }
         }
         stage('Compile') {
