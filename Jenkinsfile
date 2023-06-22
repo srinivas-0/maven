@@ -4,7 +4,7 @@ pipeline {
         stage('checkout SCM') {
             steps {
               withSonarQubeEnv('sonarqube')
-              bat "mvn clean sonar:sonar"
+              bat "mvn clean package sonar:sonar"
             }
         }
         stage('Static Analysis') {
