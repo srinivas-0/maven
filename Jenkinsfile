@@ -14,7 +14,7 @@ pipeline {
       stage('Static Analysis') {
         steps {
           withSonarQubeEnv('sonarqube') {
-            bat "mvn sonar:sonar"
+            bat "mvn sonar:sonar -Dsonar.token=sqp_a4402054d3a11634aaa9bfb52b84335d30955871"
           }
         }
       }
