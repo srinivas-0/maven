@@ -13,8 +13,9 @@ pipeline {
       }
       stage('Static Analysis') {
         steps {
-          withSonarQubeEnv('sonarqube')
+          withSonarQubeEnv('sonarqube') {
             bat "mvn sonar:sonar"
+          }
         }
       }
     }
