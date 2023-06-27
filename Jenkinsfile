@@ -36,7 +36,7 @@ pipeline {
             credentialsId: 'nexus',
             groupId: 'com.test.project',
             nexusUrl: 'localhost:8081',
-            nexusVersion: 'nexus',
+            nexusVersion: 'nexus3',
             protocol: 'http',
             repository: 'test',
             version: '1.0-SNAPSHOT'
