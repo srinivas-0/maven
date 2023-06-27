@@ -6,9 +6,9 @@ pipeline {
           bat "git pull https://github.com/srinivas-0/maven.git"
           }
       }
-      stage('compile') {
+      stage('package') {
         steps {
-          bat "mvn clean compile"
+          bat "mvn clean package"
         }
       }
       stage('Static Analysis') {
@@ -18,9 +18,14 @@ pipeline {
           }
         }
       }
-      stage('package') {
+      stage('test') {
         steps {
-          bat "mvn clean package"
+          bat "mvn clean test"
+        }
+      }
+      stage('install') {
+        steps {
+          bat "mvn clean install"
         }
       }
       stage('publish to nexus') {
