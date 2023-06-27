@@ -28,8 +28,8 @@ pipeline {
           nexusArtifactUploader artifacts: [
               [
                   artifactId: 'test',
-                  clasifier: 'test-1.0-SNAPSHOT.jar',
-                  file: 'C:/ProgramData/Jenkins/.jenkins/workspace/sample-pipeline/target/test-1.0-SNAPSHOT.jar',
+                  clasifier: '',
+                  file: 'C:/ProgramData/Jenkins/.jenkins/workspace/sample-pipeline/target/*.jar',
                   type: 'jar'
               ]
             ],
