@@ -8,7 +8,7 @@ pipeline {
       }
       stage('package') {
         steps {
-          bat "mvn clean package"
+          bat "mvn clean install"
         }
       }
       stage('Static Analysis') {
