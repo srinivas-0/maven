@@ -39,7 +39,7 @@ pipeline {
             nexusVersion: 'nexus3',
             protocol: 'http',
             repository: 'http://localhost:8081/repository/test/',
-            version: 1.0  
+            version: 1.0.0
         }
       }
     }
