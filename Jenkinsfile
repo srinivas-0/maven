@@ -25,7 +25,7 @@ pipeline {
       }
       stage('publish to nexus') {
         steps {
-          nexusArtifactUploader artifact: [
+          nexusArtifactUploader artifacts: [
               [
                   artifactId: 'test',
                   clasifier: '',
