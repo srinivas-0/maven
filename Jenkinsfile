@@ -25,7 +25,21 @@ pipeline {
       }
       stage('publish to nexus') {
         steps {
-          bat "nexusPublisher nexusInstanceId: 'Nexus', nexusRepositoryId: 'test', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target\\test-1.0-SNAPSHOT.jar']], mavenCoordinate: [artifactId: 'test', groupId: 'com.test.project', packaging: 'jar', version: '1.0']]], tagName: '1.0.0'"
+          nexusArtifactUploader artifact: [
+              [
+                  artifactId: 'test',
+                  clasifier: '',
+                  file:  'target\test-1.0-SNAPSHOT.jar',
+                  type: 'jar'
+              ]
+            ],
+            credentialsId: 'nexus',
+            groupId: 'com.test.project',
+            nexusUrl: 'localhost:8081',
+            nexusVersion: 'nexus3',
+            protocol: 'http',
+            repository: 'http://localhost:8081/repository/test/',
+            version: 1.0  
         }
       }
     }
