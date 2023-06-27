@@ -29,7 +29,7 @@ pipeline {
               [
                   artifactId: 'test',
                   clasifier: '',
-                  file: 'target/test-1.0-SNAPSHOT.jar',
+                  file: 'my-service-' + version + '.jar',
                   type: 'jar'
               ]
             ],
@@ -39,7 +39,7 @@ pipeline {
             nexusVersion: 'nexus3',
             protocol: 'http',
             repository: 'test',
-            version: '1.0'
+            version: '1.0-SNAPSHOT'
         }
       }
     }
