@@ -28,7 +28,7 @@ pipeline {
           nexusArtifactUploader artifacts: [
               [
                   artifactId: 'test',
-                  clasifier: '',
+                  classifier: '',
                   file: 'my-service-' + version + '.jar',
                   type: 'jar'
               ]
