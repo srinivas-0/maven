@@ -25,7 +25,7 @@ pipeline {
       }
       stage('publish to nexus') {
         steps {
-          "nexusArtifactUploader credentialsId: 'nexus', groupId: 'com.test.project', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test', version: '1.0'"
+          bat "nexusArtifactUploader credentialsId: 'nexus', groupId: 'com.test.project', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test', version: '1.0'"
         }
       }
     }
