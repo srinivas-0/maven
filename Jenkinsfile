@@ -29,7 +29,7 @@ pipeline {
               [
                   artifactId: 'test',
                   clasifier: '',
-                  file: 'C:/ProgramData/Jenkins/.jenkins/workspace/sample-pipeline/target/*.jar',
+                  file: 'my-service-' + version + '.jar',
                   type: 'jar'
               ]
             ],
