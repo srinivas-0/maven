@@ -29,7 +29,7 @@ pipeline {
               [
                   artifactId: 'test',
                   classifier: '',
-                  file: 'test-' + '1.0-SNAPSHOT' + '.jar',
+                  file: 'target/test-' + '1.0-SNAPSHOT' + '.jar',
                   type: 'jar'
               ]
             ],
